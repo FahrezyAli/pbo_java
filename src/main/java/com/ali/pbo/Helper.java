@@ -66,6 +66,28 @@ public class Helper
         return (a / fpb(a, b)) * b;
     }
 
+    public static int[] sortIndicesNoJavaFunction(int[] input)
+    {
+        int[] indices = new int[input.length];
+        for (int i = 0; i < input.length; i++)
+        {
+            indices[i] = i;
+        }
+        for (int i = 0; i < input.length; i++)
+        {
+            for (int j = i + 1; j < input.length; j++)
+            {
+                if (input[indices[i]] > input[indices[j]])
+                {
+                    int temp = indices[i];
+                    indices[i] = indices[j];
+                    indices[j] = temp;
+                }
+            }
+        }
+        return indices;
+    }
+
     public static int[] sortIndices(int[] input)
     {
         Integer[] indices = new Integer[input.length];

@@ -135,4 +135,17 @@ public class Matriks
         }
         return Helper.sortIndices(arrayToSort);
     }
+
+    public Matriks sortBasedOnIndecis(int[] indices)
+    {
+        Matriks result = new Matriks(this.col, this.row);
+        for (int i = 0; i < this.row; i++)
+        {
+            for (int j = 0; j < this.col; j++)
+            {
+                result.elements[i][j] = this.elements[indices[i]][j];
+            }
+        }
+        return result;
+    }
 }
