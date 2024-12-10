@@ -6,19 +6,16 @@ import java.util.Scanner;
 
 import com.ali.pbo.Helper;
 
-public class Run
-{
+public class Run {
     public static Prodi matematika = new Prodi(61, "Matematika", "Universitas Airlangga");
-    public static Prodi biologi = new Prodi(62, "Biologi" , "Universitas Airlangga");
-    public static Prodi kimia = new Prodi(63, "Kimia",  "Universitas Airlangga");
+    public static Prodi biologi = new Prodi(62, "Biologi", "Universitas Airlangga");
+    public static Prodi kimia = new Prodi(63, "Kimia", "Universitas Airlangga");
     public static Prodi fisika = new Prodi(64, "Fisika", "Universitas Airlangga");
     public static Prodi tekin = new Prodi(65, "Teknik Informatika", "Universitas Airlangga");
     public static Prodi arsitektur = new Prodi(66, "Teknik Arsitektur", "Universitas Airlangga");
 
-    public static Prodi getProdi(int id)
-    {
-        switch (id)
-        {
+    public static Prodi getProdi(int id) {
+        switch (id) {
             case 61:
                 return matematika;
             case 62:
@@ -36,23 +33,20 @@ public class Run
         }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         boolean isRunning = true;
 
         Scanner scan = new Scanner(System.in);
 
         List<Mahasiswa> mahasiswaList = new ArrayList<>();
 
-        while (isRunning)
-        {
+        while (isRunning) {
             Helper.println("1. Tambah entri mahasiswa, 2. Tampilkan data mahasiswa");
             Helper.println("Masukkan pilihan: ");
             int pilihan = scan.nextInt();
             scan.nextLine();
 
-            if (pilihan == 1)
-            {
+            if (pilihan == 1) {
                 Helper.println("Masukkan Universitas: ");
                 String universitas = scan.nextLine();
 
@@ -71,12 +65,9 @@ public class Run
 
                 Mahasiswa mhs = new Mahasiswa(nim, nama, alamat, jurusan, universitas);
                 mahasiswaList.add(mhs);
-            }
-            else if (pilihan == 2)
-            {
+            } else if (pilihan == 2) {
                 Helper.println("Data Mahasiswa: ");
-                for (Mahasiswa mhs : mahasiswaList)
-                {
+                for (Mahasiswa mhs : mahasiswaList) {
                     Helper.printBorder(20);
                     mhs.tampilMahasiswa();
                 }
@@ -85,8 +76,7 @@ public class Run
             Helper.println("Apakah Anda ingin memasukkan data lagi ? (Y) Ya ; (T) Tidak: ");
             String answer = scan.next();
 
-            if (answer.equals("T"))
-            {
+            if (answer.equals("T")) {
                 isRunning = false;
             }
         }

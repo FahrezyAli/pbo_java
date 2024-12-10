@@ -5,101 +5,79 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class Helper
-{    
-    public static void print(Object object)
-    {
+public class Helper {
+    public static void print(Object object) {
         System.out.print(object);
     }
 
-    public static void println(Object object)
-    {
+    public static void println(Object object) {
         print(object + "\n");
     }
 
-    public static void printError(Exception e)
-    {
+    public static void printError(Exception e) {
         print("Exception Occurred: " + e.getMessage());
     }
 
-    public static void newLine()
-    {
+    public static void newLine() {
         println("");
     }
 
-    public static void printBorder(int count)
-    {
-        for (int i = 0; i < count; i++)
-        {
+    public static void printBorder(int count) {
+        for (int i = 0; i < count; i++) {
             print("-");
         }
         newLine();
     }
 
-    public static <T> void printList(List<T> list)
-    {
+    public static <T> void printList(List<T> list) {
         int end = list.size();
         print("[");
-        for(int i = 0; i < end - 1; i++)
-        {
+        for (int i = 0; i < end - 1; i++) {
             print(list.get(i) + ", ");
         }
         print(list.get(end - 1) + "]");
         Helper.newLine();
     }
 
-    public static void printArray(int[] array)
-    {
+    public static void printArray(int[] array) {
         Helper.printList(Arrays.stream(array).boxed().collect(Collectors.toList()));
     }
 
-    public static String readString()
-    {
+    public static String readString() {
         return System.console().readLine();
     }
 
-    public static int readInt()
-    {
+    public static int readInt() {
         return Integer.parseInt(readString());
     }
 
-    public static double readDouble()
-    {
+    public static double readDouble() {
         return Double.parseDouble(readString());
     }
 
-    public static float readFloat()
-    {
+    public static float readFloat() {
         return Float.parseFloat(readString());
     }
 
-    public static int fpb(int a, int b)
-    {
-        if (b == 0)
-        {
+    public static int fpb(int a, int b) {
+        if (b == 0) {
             return a;
         }
         return fpb(b, a % b);
     }
-    
-    public static int kpk(int a, int b)
-    {
+
+    public static int kpk(int a, int b) {
         return (a / fpb(a, b)) * b;
     }
 
-    public static int[] sortIndicesNoJavaFunction(int[] input)
-    {
+    public static int[] sortIndicesNoJavaFunction(int[] input) {
         int[] indices = new int[input.length];
-        for (int i = 0; i < input.length; i++)
-        {
+        for (int i = 0; i < input.length; i++) {
             indices[i] = i;
         }
-        for (int i = 0; i < input.length; i++)
-        {
-            for (int j = i + 1; j < input.length; j++)
-            {
-                if (input[indices[i]] > input[indices[j]])
-                {
+        for (int i = 0; i < input.length; i++) {
+            for (int j = i + 1; j < input.length; j++) {
+                if (input[indices[i]] > input[indices[j]]) {
                     int temp = indices[i];
                     indices[i] = indices[j];
                     indices[j] = temp;
@@ -109,12 +87,10 @@ public class Helper
         return indices;
     }
 
-    public static int[] sortIndices(int[] input)
-    {
+    public static int[] sortIndices(int[] input) {
         Integer[] indices = new Integer[input.length];
-        for (int i = 0; i < input.length ; i++)
-        {
-            indices[i]=i;
+        for (int i = 0; i < input.length; i++) {
+            indices[i] = i;
         }
         Arrays.sort(indices, (o1, o2) -> input[o1] - input[o2]);
         int[] indicesInt = new int[input.length];

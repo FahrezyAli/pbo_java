@@ -1,14 +1,12 @@
 package com.ali.pbo.uas.soal2020;
 
-public class Mahasiswa extends Prodi
-{
+public class Mahasiswa extends Prodi {
     private String nim;
     private String nama;
     private String alamat;
     private int jurusan;
 
-    public Mahasiswa(String nim, String nama, String alamat, int jurusan, String nama_univ)
-    {
+    public Mahasiswa(String nim, String nama, String alamat, int jurusan, String nama_univ) {
         super(Run.getProdi(jurusan).getIdProdi(), Run.getProdi(jurusan).getNamaProdi(), nama_univ);
         this.nim = nim;
         this.nama = nama;
@@ -16,8 +14,7 @@ public class Mahasiswa extends Prodi
         this.jurusan = jurusan;
     }
 
-    public void tampilMahasiswa()
-    {
+    public void tampilMahasiswa() {
         System.out.println("Universitas: " + this.getNamaUniv());
         System.out.println("NIM: " + nim);
         System.out.println("Nama: " + nama);
@@ -25,43 +22,35 @@ public class Mahasiswa extends Prodi
         System.out.println("Jurusan: " + this.getNamaProdi());
     }
 
-    public void setNim(String nim)
-    {
+    public void setNim(String nim) {
         this.nim = nim;
     }
 
-    public String getNim()
-    {
+    public String getNim() {
         return nim;
     }
 
-    public void setNama(String nama)
-    {
+    public void setNama(String nama) {
         this.nama = nama;
     }
 
-    public String getNama()
-    {
+    public String getNama() {
         return nama;
     }
 
-    public void setAlamat(String alamat)
-    {
+    public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
 
-    public String getAlamat()
-    {
+    public String getAlamat() {
         return alamat;
     }
 
-    public void setJurusan(int jurusan)
-    {
+    public void setJurusan(int jurusan) {
         this.jurusan = jurusan;
     }
 
-    public int getJurusan()
-    {
+    public int getJurusan() {
         return jurusan;
     }
 }
