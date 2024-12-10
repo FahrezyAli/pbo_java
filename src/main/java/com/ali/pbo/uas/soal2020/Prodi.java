@@ -2,8 +2,8 @@ package com.ali.pbo.uas.soal2020;
 
 public class Prodi extends Universitas
 {
-    public int id;
-    public String nama;
+    private int id;
+    private String nama;
 
     public Prodi(int id, String nama, String nama_univ)
     {

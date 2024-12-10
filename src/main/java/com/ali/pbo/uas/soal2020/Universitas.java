@@ -1,7 +1,7 @@
 package com.ali.pbo.uas.soal2020;
 
 public class Universitas {
-    public String nama;
+    private String nama;
 
     public Universitas(String nama)
     {

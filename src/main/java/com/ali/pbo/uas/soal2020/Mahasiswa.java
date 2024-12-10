@@ -2,14 +2,14 @@ package com.ali.pbo.uas.soal2020;
 
 public class Mahasiswa extends Prodi
 {
-    public String nim;
-    public String nama;
-    public String alamat;
-    public int jurusan;
+    private String nim;
+    private String nama;
+    private String alamat;
+    private int jurusan;
 
     public Mahasiswa(String nim, String nama, String alamat, int jurusan, String nama_univ)
     {
-        super(Run.getProdi(jurusan).id, Run.getProdi(jurusan).nama, nama_univ);
+        super(Run.getProdi(jurusan).getIdProdi(), Run.getProdi(jurusan).getNamaProdi(), nama_univ);
         this.nim = nim;
         this.nama = nama;
         this.alamat = alamat;
