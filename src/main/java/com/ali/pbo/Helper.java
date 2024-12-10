@@ -2,6 +2,7 @@ package com.ali.pbo;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class Helper
@@ -50,6 +51,26 @@ public class Helper
     public static void printArray(int[] array)
     {
         Helper.printList(Arrays.stream(array).boxed().collect(Collectors.toList()));
+    }
+
+    public static String readString()
+    {
+        return System.console().readLine();
+    }
+
+    public static int readInt()
+    {
+        return Integer.parseInt(readString());
+    }
+
+    public static double readDouble()
+    {
+        return Double.parseDouble(readString());
+    }
+
+    public static float readFloat()
+    {
+        return Float.parseFloat(readString());
     }
 
     public static int fpb(int a, int b)
